@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/signin.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SV Food</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/smartFarming.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/half-slider.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->  
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    <script src="js/javascript.js"></script>
+ <!-- Custom Fonts -->
+ <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
+ <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+  <!-- jQuery Popup Overlay -->
+  <script src="js/jquery.popupoverlay.js"></script>
+    <!--<script>
+    $(document).ready(function () {
+   
+        $('#fade').popup({
+          transition: 'all 0.3s',
+          scrolllock: true
+        });
+   
+    });
+    </script>  -->
+</head>
+
+<body >
+    <!--Left Menu starts-->
+    <!-- Navigation -->            
+          <nav id="sidebar-wrapper">
+            <div class="space-40"></div>
+            <div class="space-20"></div>
+            <a class="menu-toggle rounded" href="#">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div id="login-form">
+                <h3>Login</h3>  
+                <p id="res_signin"></p>              
+                <div class="form-group">
+                    <label for="usr">Email id:</label>
+                    <input type="text" class="form-control" id="email_signin">
+                </div>
+                <div class="form-group">
+                    <label for="usr">password:</label>
+                    <input type="password" class="form-control" id="pwd_signin">
+                </div>
+                <span><a href="resetPassword.html">Forgot password</a></span><div class="clearfix"></div>
+                <button type="button" class="btn btn-default navbar-btn singin-btn" onclick="return login()">Sign in</button>  
+            </div>  
+            <div id="signup-form" class="hide">
+                    <h3>Signup</h3>                
+                    <div class="form-group">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" id="usr1">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Mobile number:</label>
+                        <input type="text" class="form-control" id="usr2">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Email id:</label>
+                        <input type="text" class="form-control" id="usr3">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">password:</label>
+                        <input type="password" class="form-control" id="usr4">
+                    </div>
+                    <button type="button" class="btn btn-default navbar-btn ">Sign in</button>  
+                </div>                    
+          </nav>
+    <!--left menu Ends-->
+    <!-- Navigation start-->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Logo" title="" style="width:70px;height:49px">
+                </div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                  
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="menu-toggle rounded login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                    <li><a class="signup-menu" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </div>
+    <!-- Navigation end-->
+    <!-- Half Page Image Background Carousel Header -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>        
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill slideone"></div>  
+                <div class="carousel-caption">                    
+                    <img src="images/viewmore.png" alt="View more" title="">
+                </div>            
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill slidetwo"></div>
+                <div class="carousel-caption">
+                    <img src="images/viewmore.png" alt="View more" title="">
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill slidethree"></div>
+                <div class="carousel-caption">
+                    <img src="images/viewmore.png" alt="View more" title="">
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill slidefour"></div>
+                <div class="carousel-caption">
+                    <img src="images/viewmore.png" alt="View more" title="">
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+    <!-- Page Content -->
+    <div class="container text">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center heading-color">It's the Crop you choose, we deliver information </h1>
+<p> Have you ever thought of having information of your choice of crop without stepping out of home?
+<p> Do you hate looking for agricultural information from different sources or companies?
+                <p> If Yes, We are the correct choice for you!.
+<p> Yes it is true! We will deliver the agricultural of your choice at the earliest time possible.
+                </p>
+            </div>
+        </div>              
+    </div>    
+   <div class="container text">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center heading-color">Three Simple steps to see the information of your choice</h2>
+                <div class="space-40"></div>
+                <img class="center-align display-block full-img" src="images/Simplesteps.jpg" alt="Information Delivery" title="">
+               <div class="space-40"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text bg-dark">
+        <div class="row padding-top-bottom">
+            <div class="col-sm-4  text-center">
+                <img class="center-align display-block" src="images/step1.jpg" alt="Easy Login" >
+                <h4 class="heading-color">Easy Login  </h4>
+                <p class="text-color-white">Simple Registration Process </p>
+            </div>
+            <div class="col-sm-4  text-center">
+                <img class="center-align display-block" src="images/step2.jpg" alt="Varierty of Crop Selection" >
+                <h4 class="heading-color">Varierty of Crop Selection</h4>
+                <p class="text-color-white">Simple navigation of crops available! </p>
+            </div>
+            <div class="col-sm-4  text-center">
+                <img class="center-align display-block" src="images/step3.jpg" alt="Faster Information Delivery" >
+                <h4 class="heading-color">Faster Delivery of information</h4>
+                <p class="text-color-white"> Feel the freshness of information in our data store! </p>
+            </div>
+        </div>
+    </div>
+    <div class="container text ">
+        <div class="col-sm-6  text-center">
+            <div class="space-40"></div>
+            <h2 class="heading-color">Get the app for Andriod and Iphone</h2>
+            <div class="space-40"></div>
+            <div class="col-sm-6  text-center"><img class="center-align display-block" src="images/mobile-app-buttons-mac.png"
+                    alt=""></div>
+            <div class="display-device"></div>
+            <div class="col-sm-6  text-center"><img class="center-align display-block" src="images/mobile-app-buttons-android.png"
+                    alt=""></div>
+            <div class="display-device"></div>
+        </div>
+        <div class="col-sm-6  text-center">
+            <img class="center-align display-block" src="images/mobile-app.jpg" alt="" >
+        </div>
+    </div>
+   
+    <!-- /.container -->
+     <!-- Footer -->
+    <footer class="navbar bg-dark py-5-version3">
+            <div class="container">
+                    <div class="col-sm-3">
+                      <H4 class="heading-color">About Us</H4>
+                      <ul>        
+                        <li><a href="AboutUs.html">Our Stories</a></li>
+                        <li> <a href="Careers.html">Careers</a></li>          
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <H4 class="heading-color">Policies</H4>
+                      <ul>
+                        <li><a href="TandC.html">T&C</a></li>          
+                        <li><a href="RefundandCancellation.html">Data Policies</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <H4 class="heading-color">Contact Us</H4>
+                      <ul>
+                        <li><a href="OnlineSupport.html">Online Support</a></li>          
+                        <li><a href="ForRestaurants.html">For Consultants</a></li>
+                      </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="space-40"></div>
+                    <div class="dotted-divider"></div>
+                    <p class="m-0 text-center text-white text-color-white">Copyright © 2019 Smart Farming, All rights reserved</p>
+                  </div>
+    </footer>
+    <script src="js/stylish-portfolio.js"></script>  
+    <!-- Sign up starts -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <!--<p id="res_signup"></p>-->
+                    <div id="res_signup" class="" role="alert"></div>
+                    <form>
+                        <ul class="form-style-1">
+                            <li>
+                                <label>Full Name <span class="required">*</span>
+                                </label><input type="text" id="fname" class="field-divided" placeholder="First" />
+                                <input type="text" id="lname" class="field-divided" placeholder="Last" />
+                            <li>
+                            <li>
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" id="email" class="field-long" />
+                            </li>
+                            <li>
+                                <label>Password <span class="required">*</span></label>
+                                <input type="password" id="pwd" class="field-long" />
+                            </li>
+                            <li>
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" class="field-long" />
+                            </li>
+                            <li>
+                                <label>Address <span class="required">*</span></label>
+                                <textarea name="address" id="addr" class="field-long field-textarea"></textarea>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" id="chkAgree"> I agree to Smart Farming's Terms of Service,
+                                    Privacy Policy and Content Policies</label>
+                            </li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success" onclick="return register()">Register</button>                                
+                            </div>
+                        </ul>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign up ends -->
+     <script>
+        $(document).keypress(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                login();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
